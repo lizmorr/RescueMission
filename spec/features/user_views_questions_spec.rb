@@ -15,8 +15,21 @@ feature 'user_views_questions' do
 
     visit '/'
 
-    expect(page).to have_content(question1.title)
-    expect(page).to have_content(question2.title)
+    page.assert_selector('ul#all_questions li:first-child', text: question2.title)
+    page.assert_selector('ul#all_questions li:last-child', text: question1.title)
+
+
+  end
+
+  scenario 'user sees questions at /questions' do
+    question1 = Question.create(title: "What is the best approach to TDD?")
+    question2 = Question.create(title: "Why is the sky blue?")
+
+    visit '/questions'
+
+    page.assert_selector('ul#all_questions li:first-child', text: question2.title)
+    page.assert_selector('ul#all_questions li:last-child', text: question1.title)
+
   end
 
 end
