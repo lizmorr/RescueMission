@@ -14,12 +14,12 @@ feature 'user_views_details' do
     visit '/'
     click_on 'Ask a new question'
 
-    fill_in(:title, with: "c"*40)
-    fill_in(:description, with: "d"*150)
-    click_on 'Submit question'
+    fill_in('Title', with: 'c'*40)
+    fill_in('Detail', with: 'd'*150)
+    click_on 'Submit Question'
 
-    expect(page).to have_content("c"*55)
-    expect(page).to have_content("d"*155)
+    expect(page).to have_content('Question added')
+    expect(page).to have_content('c'*40)
   end
 
   pending 'user fills out form with missing infomation'
