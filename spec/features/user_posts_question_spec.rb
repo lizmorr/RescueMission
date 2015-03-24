@@ -12,11 +12,11 @@ feature 'user_views_details' do
   # - I must be presented with errors if I fill out the form incorrectly
   scenario 'user_posts_question succesfully' do
     visit '/'
-    click 'Ask a new question'
+    click_on 'Ask a new question'
 
     fill_in(:title, with: "c"*40)
     fill_in(:description, with: "d"*150)
-    click 'Submit question'
+    click_on 'Submit question'
 
     expect(page).to have_content("c"*55)
     expect(page).to have_content("d"*155)
