@@ -11,10 +11,9 @@ feature 'user_views_details' do
   # - I must see the question's title
   # - I must see the question's description
   scenario 'user links to details' do
-    question1 = Question.create(title: "What is the best approach to TDD?",
-      detail: "I want to understand the best approach to TDD. What are the first steps I should take?")
+    question1 = Question.create(title: "x"*41, detail: "a"*151)
 
-    visit '/'
+    visit root_path
 
     click_link(question1.title)
 
