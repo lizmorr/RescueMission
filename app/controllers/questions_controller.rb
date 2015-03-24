@@ -18,6 +18,7 @@ class QuestionsController < ApplicationController
       flash[:notice] = 'Question added.'
       redirect_to root_path
     else
+      flash[:notice] = @question.errors.full_messages
       render :new
     end
   end
