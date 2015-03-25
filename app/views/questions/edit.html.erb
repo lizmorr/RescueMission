@@ -1,0 +1,13 @@
+<div class="large-12">
+  <h1>Revise Question</h1>
+
+  <%= form_for @question do |f| %>
+    <h2><%= f.label :title %></h2>
+    <%= f.text_field :title %>
+
+    <h2><%= f.label :detail %></h2>
+    <%= f.text_area :detail %>
+
+    <%=f.submit "Submit Revision" %>
+  <% end %>
+</div>
