@@ -12,26 +12,27 @@ feature 'user_answers_questions' do
   # - I must be presented with errors if I fill out the form incorrectly
 
   scenario 'user_successfully_answers' do
-    question = Question.create(title: "c"*40, detail: "d"*150)
+    question = FactoryGirl.create(:question)
     visit "/questions/#{question.id}"
 
     fill_in 'Answer', with: "s"*50
 
     click_on 'Answer Question'
 
-    expect(page).to have_content ('Question answered!')
-    expect(page).to have_content ("s"*50)
+    expect(page).to have_content('Question answered!')
+    expect(page).to have_content("s"*50)
   end
 
   scenario 'user_submits_invalid_information' do
-    question = Question.create(title: "c"*40, detail: "d"*150)
+    question = FactoryGirl.create(:question)
     visit "/questions/#{question.id}"
 
     fill_in 'Answer', with: "s"*40
 
     click_on 'Answer Question'
 
-    expect(page).to have_content ('Description is too short (minimum is 50 characters)')
+    expect(page).to have_content('Description is too short (minimum is 50 characters)')
+    expect(page).to have_field('Answer', with: "s"*40)
   end
 
 end
