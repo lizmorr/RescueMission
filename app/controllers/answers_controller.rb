@@ -1,5 +1,10 @@
 class AnswersController < ApplicationController
 
+  def index
+    @question = Question.find(params[:question_id])
+    @answers = @question.answers.order(created_at: :asc)
+  end
+
   def new
     @question = Question.find(params[:question_id])
     @answer = Answer.new

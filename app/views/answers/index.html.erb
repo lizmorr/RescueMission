@@ -1,0 +1,8 @@
+<h3>Answers</h3>
+<% unless @answers.nil? %>
+  <ul id="all_answers">
+    <% @answers.each do |answer| %>
+      <li><%= answer.description %></a>
+    <% end %>
+  </ul>
+<% end %>

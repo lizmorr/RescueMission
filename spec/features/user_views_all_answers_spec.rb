@@ -8,8 +8,8 @@ feature "user views answers" do
 
     visit question_path(question1)
 
-    page.assert_selector('ul#all_questions li:first-child', text: answer2.description)
-    page.assert_selector('ul#all_questions li:last-child', text: answer1.description)
+    page.assert_selector('ul#all_answers li:first-child', text: answer1.description)
+    page.assert_selector('ul#all_answers li:last-child', text: answer2.description)
 
   end
 end
