@@ -14,7 +14,7 @@ class AnswersController < ApplicationController
       redirect_to question_path(@question)
     else
       flash[:notice] = @answer.errors.full_messages
-      render :new
+      render 'questions/show'
     end
   end
 

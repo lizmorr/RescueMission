@@ -2,7 +2,7 @@
 Details:
 <p><%= @question.detail %></p>
 
-<%= link_to "I have the answer!", "/questions/#{@question.id}/answers/new" %>
+<%= render template: 'answers/new' %>
 
 <% if @question.answers.present? %>
   <h2>Answers</h2>

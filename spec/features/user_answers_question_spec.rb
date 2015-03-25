@@ -15,8 +15,6 @@ feature 'user_answers_questions' do
     question = Question.create(title: "c"*40, detail: "d"*150)
     visit "/questions/#{question.id}"
 
-    click_on 'I have the answer!'
-
     fill_in 'Answer', with: "s"*50
 
     click_on 'Answer Question'
@@ -28,8 +26,6 @@ feature 'user_answers_questions' do
   scenario 'user_submits_invalid_information' do
     question = Question.create(title: "c"*40, detail: "d"*150)
     visit "/questions/#{question.id}"
-
-    click_on 'I have the answer!'
 
     fill_in 'Answer', with: "s"*40
 
