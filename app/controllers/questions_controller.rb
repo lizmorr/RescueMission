@@ -25,6 +25,21 @@ class QuestionsController < ApplicationController
     end
   end
 
+  def edit
+    @question = Question.find(params[:id])
+  end
+
+  def update
+    @question = Question.new(question_params)
+    if @question.save
+      flash[:notice] = 'Question revised.'
+      redirect_to question_path(@question)
+    else
+      flash[:notice] = @question.errors.full_messages
+      render :edit
+    end
+  end
+
   protected
 
   def question_params
