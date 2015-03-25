@@ -23,8 +23,19 @@ feature 'user_answers_questions' do
 
     expect(page).to have_content ('Question answered!')
     expect(page).to have_content ("s"*50)
-
   end
 
-  pending 'user_submits_invalid_information'
+  scenario 'user_submits_invalid_information' do
+    question = Question.create(title: "c"*40, detail: "d"*150)
+    visit "/questions/#{question.id}"
+
+    click_on 'I have the answer!'
+
+    fill_in 'Answer', with: "s"*40
+
+    click_on 'Answer Question'
+
+    expect(page).to have_content ('Description is too short (minimum is 50 characters)')
+  end
+
 end

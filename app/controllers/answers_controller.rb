@@ -12,6 +12,9 @@ class AnswersController < ApplicationController
     if @answer.save
       flash[:notice] = "Question answered!"
       redirect_to question_path(@question)
+    else
+      flash[:notice] = @answer.errors.full_messages
+      render :new
     end
   end
 
