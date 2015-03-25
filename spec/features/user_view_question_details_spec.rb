@@ -11,7 +11,7 @@ feature 'user_views_details' do
   # - I must see the question's title
   # - I must see the question's description
   scenario 'user links to details' do
-    question1 = Question.create(title: "x"*41, detail: "a"*151)
+    question1 = FactoryGirl.create(:question)
 
     visit root_path
 
