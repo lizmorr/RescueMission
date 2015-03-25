@@ -33,6 +33,9 @@ feature 'user_views_details' do
     expect(page).to have_content('Title is too short (minimum is 40 characters)')
     expect(page).to have_content('Detail is too short (minimum is 150 characters)')
 
+    expect(page).to have_field('Title', with: "c"*30)
+    expect(page).to have_field('Detail', with: "d"*100)
+
   end
 
 end
