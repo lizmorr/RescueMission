@@ -1,5 +1,5 @@
-<h3>Answers</h3>
-<% unless @answers.nil? %>
+<% unless @answers == [] || @answers.nil? %>
+  <h3 class="subheader">Answers</h3>
   <ul id="all_answers">
     <% @answers.each do |answer| %>
       <li><%= answer.description %></a>
