@@ -1,14 +1,15 @@
+<% markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML) %>
+
 <div="row" id="title_block">
   <div="column">
-    <%= @question.title %>
+    <%= markdown.render(@question.title) %>
   </div>
 </div>
-
 
 <div="row" id="detail_block">
   <div="column">
     <h2 class="subheader">Details:</h2>
-    <p><%= @question.detail %></p>
+    <%= markdown.render(@question.detail)%>
   </div>
 </div>
 

@@ -1,8 +1,10 @@
+<% markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML) %>
+
 <% unless @answers == [] || @answers.nil? %>
   <h3 class="subheader">Answers</h3>
   <ul id="all_answers">
     <% @answers.each do |answer| %>
-      <li><%= answer.description %></a>
+      <li><% markdown.render(answer.description)%></li>
     <% end %>
   </ul>
 <% end %>
