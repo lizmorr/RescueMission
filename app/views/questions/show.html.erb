@@ -1,9 +1,19 @@
-<header><h1><%= @question.title %></h1></header>
-<h2 class="subheader">Details:</h2>
+<div="row" id="title_block">
+  <div="column">
+    <%= @question.title %>
+  </div>
+</div>
 
-<p><%= @question.detail %></p>
-    <%= link_to "Revise Question", edit_question_path(@question) %>  </div>
-    <%= link_to "Delete Question", question_path(@question), method: :delete %>
+
+<div="row" id="detail_block">
+  <div="column">
+    <h2 class="subheader">Details:</h2>
+    <p><%= @question.detail %></p>
+  </div>
+</div>
+
+<%= link_to "Revise Question", edit_question_path(@question) %>  </div>
+<%= link_to "Delete Question", question_path(@question), method: :delete %>
 
 <div class="row">
   <%= render template: 'answers/index' %>
