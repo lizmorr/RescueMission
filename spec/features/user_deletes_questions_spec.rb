@@ -17,9 +17,10 @@ feature 'user deletes question' do
     question_to_delete = FactoryGirl.create(:question)
 
     visit question_path(question_to_delete)
-    click_on 'Delete question'
+    click_on 'Delete Question'
 
     expect(page).to have_no_content(question_to_delete.title)
+    expect(page).to have_content('Question deleted.')
     expect(page).to have_content(question_to_keep.title)
   end
 
@@ -28,9 +29,10 @@ feature 'user deletes question' do
     question_to_delete = FactoryGirl.create(:question)
 
     visit edit_question_path(question_to_delete)
-    click_on 'Delete question'
+    click_on 'Actually, just delete this'
 
     expect(page).to have_no_content(question_to_delete.title)
+    expect(page).to have_content('Question deleted.')
     expect(page).to have_content(question_to_keep.title)
   end
 
