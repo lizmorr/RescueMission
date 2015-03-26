@@ -2,14 +2,13 @@
 <h2 class="subheader">Details:</h2>
 
 <p><%= @question.detail %></p>
-<div class="container">
-  <%= link_to "Revise Question", edit_question_path(@question) %>
-</div>
+    <%= link_to "Revise Question", edit_question_path(@question) %>  </div>
+    <%= link_to "Delete Question", question_path(@question), method: :delete %>
 
-<div class="container">
+<div class="row">
   <%= render template: 'answers/index' %>
 </div>
 
-<div class="container">
+<div class="row">
   <%= render template: 'answers/new' %>
 </div>
