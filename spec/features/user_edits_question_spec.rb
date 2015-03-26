@@ -16,6 +16,9 @@ feature 'user edits question' do
     expect(page).to have_content('j'*40)
     expect(page).to have_content('k'*150)
 
+    visit questions_path
+    expect(page).to have_no_content(question_to_edit.title)
+
   end
 
   scenario 'user edits with invalid information' do
