@@ -30,7 +30,8 @@ class QuestionsController < ApplicationController
   end
 
   def update
-    @question = Question.new(question_params)
+    @question = Question.find(params[:id])
+    @question.update(question_params)
     if @question.save
       flash[:notice] = 'Question revised.'
       redirect_to question_path(@question)
