@@ -10,28 +10,8 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require foundation_and_overrides
  *= require_tree .
  *= require_self
- *= require foundation_and_overrides
 
  */
-body {
-  background-color: #EAF3F9;
-  color: #2A3F69;
-}
-
-.subheader {
-  color: #9CC4E4;
-}
-
-.flash .container {
-  background-color: #F26F52;
-}
-
-a:link {
-  color: #3C89C8
-}
-
-a:visited {
-  color: #9CC4E4
-}
