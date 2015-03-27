@@ -16,6 +16,6 @@ feature 'markdown is supported' do
   scenario 'user submits answer using markdown' do
     answer = FactoryGirl.create(:answer, description: "*Hello*"+"z"*120)
     visit question_path(answer.question)
-    expect(page).to have_css('#answer_block em', text: "Hello")
+    expect(page).to have_css('#all_answers em', text: "Hello")
   end
 end

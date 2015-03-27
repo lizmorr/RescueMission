@@ -2,14 +2,14 @@
 
 <div="row" id="title_block">
   <div="column">
-    <%= markdown.render(@question.title) %>
+    <h1><%= markdown.render(@question.title).html_safe %><h1>
   </div>
 </div>
 
 <div="row" id="detail_block">
   <div="column">
     <h2 class="subheader">Details:</h2>
-    <%= markdown.render(@question.detail)%>
+    <%= markdown.render(@question.detail).html_safe%>
   </div>
 </div>
 

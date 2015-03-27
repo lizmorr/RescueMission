@@ -4,7 +4,7 @@
   <h3 class="subheader">Answers</h3>
   <ul id="all_answers">
     <% @answers.each do |answer| %>
-      <li><% markdown.render(answer.description)%></li>
+      <li><%= markdown.render(answer.description).html_safe%></li>
     <% end %>
   </ul>
 <% end %>
