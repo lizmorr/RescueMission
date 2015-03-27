@@ -1,6 +1,30 @@
-.flash .container {
+@import url(http://fonts.googleapis.com/css?family=Josefin+Slab:400,700|Open+Sans:300italic,300);
+
+.top-bar .flash {
   background-color: #F26F52;
   color: #EAF3F9;
+}
+
+.top-bar .title-area {
+  background-color: #3C89C8;
+}
+
+.top-bar .title {
+  background-color: #3C89C8;
+  font-family: 'Josefin Slab'
+  font-weight: bold;
+}
+
+.top-bar .name h1 a {
+  color: #2A3F69;
+}
+
+.top-bar .name {
+  color: #2A3F69;
+}
+
+body: {
+  font-family: 'Opens Sans'
 }
 
 a:link {
@@ -17,4 +41,12 @@ a:hover {
 
 a:click {
   color: #9CC4E4
+}
+
+.button.radius {
+  background-color: #2A3F69;
+}
+
+a.button.radius {
+  color: #EAF3F9;
 }

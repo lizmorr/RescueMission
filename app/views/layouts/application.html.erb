@@ -10,7 +10,7 @@
 
 <% if flash.any? %>
   <div class="flash">
-    <div class="container">
+    <div class="top-bar" id="flash">
       <%if flash[:notice].is_a?(Array) %>
         <ul>
           <% flash[:notice].each do |notice| %>
@@ -27,7 +27,7 @@
 <nav class="top-bar" data-topbar role="navigation">
   <ul class="title-area">
     <li class="name">
-      <h1><%= root_path %>Rescue Mission</a></h1>
+      <h1><%= link_to "Rescue Mission", root_path, class: "title"%></h1>
     </li>
   </ul>
 </nav>
