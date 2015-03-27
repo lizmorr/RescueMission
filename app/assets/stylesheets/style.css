@@ -1,0 +1,20 @@
+.flash .container {
+  background-color: #F26F52;
+  color: #EAF3F9;
+}
+
+a:link {
+  color: #2A3F69;
+}
+
+a:visited {
+  color: #9CC4E4;
+}
+
+a:hover {
+  color: #3C89C8;
+}
+
+a:click {
+  color: #9CC4E4
+}

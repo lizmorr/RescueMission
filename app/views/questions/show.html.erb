@@ -1,9 +1,20 @@
-<header><h1><%= @question.title %></h1></header>
-<h2 class="subheader">Details:</h2>
+<% markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML) %>
 
-<p><%= @question.detail %></p>
-    <%= link_to "Revise Question", edit_question_path(@question) %>  </div>
-    <%= link_to "Delete Question", question_path(@question), method: :delete %>
+<div="row" id="title_block">
+  <div="column">
+    <h1><%= markdown.render(@question.title).html_safe %><h1>
+  </div>
+</div>
+
+<div="row" id="detail_block">
+  <div="column">
+    <h2 class="subheader">Details:</h2>
+    <%= markdown.render(@question.detail).html_safe%>
+  </div>
+</div>
+
+<%= link_to "Revise Question", edit_question_path(@question) %>  </div>
+<%= link_to "Delete Question", question_path(@question), method: :delete %>
 
 <div class="row">
   <%= render template: 'answers/index' %>
